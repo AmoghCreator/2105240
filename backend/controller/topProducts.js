@@ -38,14 +38,14 @@ const topProducts = async (req, res) => {
     if (page) URL += `&page=${page}`;
 
     // getting Access Token
-    const AccessRequest = await axios.post("http://20.244.56.144/test/auth", {
-      "companyName": "Kalinga Institute of Industrial Technology",
-      "clientID": "972e60f3-5be2-4fac-9691-d91060616299",
-      "clientSecret": "mbsDsDWpBdkGBvOd",
-      "ownerName": "Amogh",
-      "ownerEmail": "2105240@kiit.ac.in",
-      "rollNo": "2105240"
-  });
+    const AccessRequest = await axios.post("http://20.244.56.144/test/auth",{
+    "companyName": "Kalinga Institute of Industrial Technology",
+    "clientID": "7df07ce3-a3b4-4427-9379-9d064a83030c",
+    "clientSecret": "iqOdntDXjuVLLiET",
+    "ownerName": "Amogh",
+    "ownerEmail": "2105240@kiit.ac.in",
+    "rollNo": "2105240"
+});
     var ACCESS = AccessRequest.data.access_token;
     console.log(ACCESS)
 

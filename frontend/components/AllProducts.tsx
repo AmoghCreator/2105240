@@ -29,6 +29,7 @@ export const AllProducts = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        console.log("handleHit");
 
         let queryParams = {};
         if (minPrice) queryParams['minPrice'] = minPrice;
@@ -38,7 +39,7 @@ export const AllProducts = () => {
         if (top) queryParams['top'] = top;
 
         try {
-            const response = await axios.get(`http://localhost:8080/api/getproducts/companies/${companyName}/categories/${categoryName}/products`, {
+            const response = await axios.get(`http://localhost:8081/api/getproducts/companies/${companyName}/categories/${categoryName}/products`, {
                 params: queryParams,
             });
             console.log(response.data.data);
@@ -46,11 +47,12 @@ export const AllProducts = () => {
         } catch (err: any) {
             setError(err.response.data.message);
         }
+        console.log("handleDone");
     };
 
     return (
         <>
-            <div className="max-w-4xl mx-auto my-10 p-4 bg-white rounded-lg shadow-lg">
+            <div className="max-w-4xl mx-auto my-10 p-4 bg-blue-200 rounded-lg shadow-lg">
                 <h1 className="text-3xl font-bold mb-6 text-gray-800">Filter Products</h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="col-span-2">
@@ -85,7 +87,7 @@ export const AllProducts = () => {
                                     <input type="number" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
                                 </label>
                             </div>
-                            <button type="submit" className="bg-blue-500 text-white rounded-md px-4 py-2 mt-6 md:col-span-2 focus:outline-none hover:bg-blue-600 transition duration-300">Apply Filters</button>
+                            <button type="submit" className="bg-red-500 text-white rounded-md px-4 py-2 mt-6 md:col-span-2 focus:outline-none hover:bg-green-500 transition duration-300">Search</button>
                         </form>
                     </div>
                     <div>

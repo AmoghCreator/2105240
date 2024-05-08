@@ -1,0 +1,8 @@
+{
+    "companyName": "Kalinga Institute of Industrial Technology",
+    "clientID": "972e60f3-5be2-4fac-9691-d91060616299",
+    "clientSecret": "mbsDsDWpBdkGBvOd",
+    "ownerName": "Amogh",
+    "ownerEmail": "2105240@kiit.ac.in",
+    "rollNo": "2105240"
+}
